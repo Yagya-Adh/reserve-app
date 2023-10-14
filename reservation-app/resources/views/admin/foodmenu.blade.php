@@ -26,7 +26,7 @@
                        
                         <div class="row p-3  ">
                         
-                            <form action="{{url('uploadfood')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{url('/uploadfood',$data->id)}}" method="post" enctype="multipart/form-data">
                                 @csrf
 
                             <div class="p-3">
@@ -58,6 +58,37 @@
                             </form>
 
 
+
+                            <div>
+
+
+                                <table class="table">
+
+                                    <tr align="center">
+                                        <th style="padding: 30px">Food Name</th>
+                                        <th style="padding: 30px">Price</th>
+                                        <th style="padding: 30px">Description</th>
+                                        <th style="padding: 30px">Image</th>
+                                        <th style="padding: 30px">Action</th>
+                                        <th style="padding: 30px">Action 2</th>
+                                    </tr>
+                                    
+                                    @foreach ($data as $data)    
+                                    <tr align="center">
+                                        <td>{{$data->title}}</td>
+                                        <td>{{$data->price}}</td>
+                                        <td>{{$data->description}}</td>
+                                        <td>
+                                            <img height="200" width="300" src="public/foodimage/{{$data->image}}" alt="">
+                                        </td>
+                                        <td><a href="{{url('/deletemenu',$data->id)}}" class="btn btn-danger">Delete</a></td>
+                                        <td><a href="{{url('/updateview',$data->id)}}" class="btn btn-info">Update</a></td>
+                                    </tr>
+                                    @endforeach
+
+
+                                </table>
+                            </div>
                         </div>   
                         
                         
