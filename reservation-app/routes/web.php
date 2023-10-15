@@ -41,6 +41,7 @@ Route::get('/deletechef/{id}', [AdminController::class, 'deletechef']);
 
 // addcart
 Route::post('/addcart/{id}', [HomeController::class, 'addcart']);
+Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
 
 
 

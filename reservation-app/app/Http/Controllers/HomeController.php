@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Food;
 use App\Models\Foodchef;
 use Illuminate\Http\Request;
@@ -35,7 +36,12 @@ class HomeController extends Controller
 
             return view('admin.adminhome');
         } else {
-            return view('home', compact('data', 'data2'));
+
+            $user_id = Auth::id(); //loggin user id 
+
+            $count = Cart::where('user_id', $user_id)->count();
+
+            return view('home', compact('data', 'data2', 'count'));
         }
     }
 
@@ -47,12 +53,33 @@ class HomeController extends Controller
 
         if (Auth::id()) {
 
-            $user_id = Auth::id();
+            $user_id = Auth::id(); //loggin user id 
+            $food_id = $id;
+            $quantity = $request->quantity;
+
+            $cart = new Cart();
+            $cart->user_id = $user_id;
+            $cart->food_id = $food_id;
+            $cart->quantity = $quantity;
+
+            $cart->save();
 
             return redirect()->back();
         } else {
 
             return redirect('/login');
         }
+    }
+
+
+    public function showcart(Request $request, $id)
+    {
+
+        $count = Cart::where('user_id', $id)->count();
+
+        // joins
+        $data = Cart::where('user_id', $id)->join('food', 'carts.food_id', '=', 'food.id')->get();
+
+        return view('showcart', compact('count', 'data'));
     }
 }
