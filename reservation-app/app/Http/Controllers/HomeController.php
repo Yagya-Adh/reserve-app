@@ -38,4 +38,21 @@ class HomeController extends Controller
             return view('home', compact('data', 'data2'));
         }
     }
+
+
+    // cart
+
+    public function addcart(Request $request, $id)
+    {
+
+        if (Auth::id()) {
+
+            $user_id = Auth::id();
+
+            return redirect()->back();
+        } else {
+
+            return redirect('/login');
+        }
+    }
 }

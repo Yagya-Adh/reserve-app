@@ -50,7 +50,40 @@
                             </form>
                        
                           
+                          
+                            <table class="table">
 
+                              <tr align="center">
+                                <th class="p-3">Chef Name</th>
+                                <th class="p-3">Speciality</th>
+                                <th class="p-3">Image</th>
+                                <th class="p-3">Action</th>
+                                <th class="p-3">Action 2</th>
+                              </tr>
+                              
+                              @foreach ($data as $data)
+                          
+                              <tr align="center">
+                                <td>{{$data->name}}</td>
+                                <td>{{$data->speciality}}</td>
+                                <td>                                  
+                                  <img height="200" width="250" src="chefimage/{{$data->image}}" alt="">
+                                </td>
+
+                                <td>
+                                  <a href="{{url('/updatechef',$data->id)}}" class="text text-warning">Update</a>
+                                </td>
+                                <td>
+                                  <a href="{{url('/deletechef',$data->id)}}" class="text text-danger">Delete</a>
+                                </td>
+
+                              </tr>
+                                
+                              @endforeach
+                            </table>
+
+                            
+                            
                       </div>   
                                                
                     </div>
