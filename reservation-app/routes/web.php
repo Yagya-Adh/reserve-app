@@ -29,6 +29,7 @@ Route::post('/uploadfood/{id}', [AdminController::class, 'update']);
 
 // resevation
 Route::post('reservation', [AdminController::class, 'reservation']);
+Route::get('viewreservation', [AdminController::class, 'viewreservation']);
 
 
 

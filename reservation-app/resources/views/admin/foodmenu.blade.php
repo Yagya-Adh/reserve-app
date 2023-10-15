@@ -26,7 +26,7 @@
                        
                         <div class="row p-3  ">
                         
-                            <form action="{{url('/uploadfood',$data->id)}}" method="post" enctype="multipart/form-data">
+                            <form action="{{url('/uploadfood')}}" method="post" enctype="multipart/form-data">
                                 @csrf
 
                             <div class="p-3">

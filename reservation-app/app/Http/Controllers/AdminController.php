@@ -119,4 +119,12 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'One Reservation is done');
     }
+
+
+    public function viewreservation()
+    {
+        $data = Reservation::all();
+
+        return view('admin.adminreservation', compact('data'));
+    }
 }
