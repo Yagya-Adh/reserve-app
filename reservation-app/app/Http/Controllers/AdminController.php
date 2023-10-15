@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -97,5 +98,25 @@ class AdminController extends Controller
         $data->save();
 
         return redirect()->back()->with('message', 'Food menu is successfully update.');
+    }
+
+
+    /*   resevation */
+
+    public function reservation(Request $request)
+    {
+        $data = new Reservation();
+
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->guest = $request->guest;
+        $data->date = $request->date;
+        $data->time = $request->time;
+        $data->message = $request->message;
+
+        $data->save();
+
+        return redirect()->back()->with('message', 'One Reservation is done');
     }
 }

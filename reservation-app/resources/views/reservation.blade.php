@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-form">
-                        <form id="contact" action="" method="post">
+                        <form id="contact" action="{{url('/reservation')}}" method="post">
                             @csrf
                           <div class="row">
                             <div class="col-lg-12">
@@ -50,6 +50,8 @@
                               </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
+                            
+                                <input type="number" name="guest" placeholder="Number of guest"/>
                            
                             </div>
                             <div class="col-lg-6">
@@ -63,14 +65,9 @@
                                 </div>   
                             </div>
                             <div class="col-md-6 col-sm-12">
-                              <fieldset>
-                                <select value="time" name="time" id="time">
-                                    <option value="time">Time</option>
-                                    <option name="Breakfast" id="Breakfast">Breakfast</option>
-                                    <option name="Lunch" id="Lunch">Lunch</option>
-                                    <option name="Dinner" id="Dinner">Dinner</option>
-                                </select>
-                              </fieldset>
+                               
+                                <input type="time" name="time"  />
+
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
