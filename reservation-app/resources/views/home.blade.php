@@ -85,57 +85,48 @@ https://templatemo.com/tm-558-klassy-cafe
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li> 
 
 
-                            {{-- cart --}}
-                            <li class="scroll-to-section bg-red-500">
-                                
+                            {{-- cart --}}                                                        
                                     
-                                    @auth  
-                                    
-                                    <a href="{{url('/showcart',Auth::user()->id)}}">
-                                        Cart[{{$count}}]
-                                    </a>
-
+                                    @auth                                      
+                                        <li class="scroll-to-section  bg-red-500"> 
+                                        <a href="{{url('/showcart',Auth::user()->id)}}">
+                                            Cart[{{$count}}]
+                                        </a>
+                                        </li> 
                                     @endauth
 
                                     @guest                                        
-                                    Cart[0]
-                                    @endguest
-                            </li> 
-
-
-
+                                        <li class="scroll-to-section"> 
+                                        Cart[0]
+                                        </li>    
+                                    @endguest                          
                             <li>
+                                @if (Route::has('login'))
+                                    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                                        @auth                                                                     
+                                            <li>                       
+                                                <x-app-layout>
+                                                </x-app-layout>
+                                            </li>
+                                        @else
+                                        <li>
+                                            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                                        </li>
+                                        
 
-                                 @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                                                              
-                        <li>                       
-                         <x-app-layout>
-                         </x-app-layout>
-                        </li>
-                    @else
-                       <li>
+                                        @if (Route::has('register'))
+                                            <li>
 
-                           <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-                       </li>
-                    
-
-                        @if (Route::has('register'))
-                         <li>
-
-                             <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                         </li>
-                        
-                        @endif
-                    @endauth
-                </div>
-            @endif
+                                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                            </li>
+                                            
+                                        @endif
+                                        @endauth
+                                    </div>
+                                @endif
                             </li>
                         </ul>        
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
+                       
                         <!-- ***** Menu End ***** -->
                     </nav>
                 </div>

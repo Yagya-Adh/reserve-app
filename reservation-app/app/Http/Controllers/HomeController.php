@@ -77,9 +77,24 @@ class HomeController extends Controller
 
         $count = Cart::where('user_id', $id)->count();
 
+        $data2 = Cart::select('*')->where('user_id', '=', '$id'); // to  provide id of all join table
+
         // joins
         $data = Cart::where('user_id', $id)->join('food', 'carts.food_id', '=', 'food.id')->get();
 
-        return view('showcart', compact('count', 'data'));
+        return view('showcart', compact('count', 'data', 'data2'));
+    }
+
+
+
+
+    public function remove($id)
+    {
+
+        $data = Cart::find($id);
+
+        $data->delete();
+
+        return redirect()->back();
     }
 }
