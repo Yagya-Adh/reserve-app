@@ -150,11 +150,31 @@ https://templatemo.com/tm-558-klassy-cafe
                                     <th class="p-3">Action</th>
                                 </tr>
 
+                                <form action="{{url('/orderconfirm')}}" method="POST" >
+                                            @csrf
+
                                 @foreach ($data as $data)
                                     <tr align="center">
-                                        <td>{{$data->title}}</td>
-                                        <td>{{$data->price}}</td>
-                                        <td>{{$data->quantity}}</td>                                    
+                                        
+                                        <td>
+                                            <input type="text" name="foodname[]" value="{{$data->title}}" hidden="">
+                                            {{$data->title}}
+                                        
+                                        </td>
+                                       
+                                        <td>
+                                            <input type="text" name="price[]" value="{{$data->price}}" hidden="">
+
+                                            {{$data->price}}
+                                        
+                                        </td>
+                                        
+                                        <td>
+                                            <input type="text" name="quantity[]" value="{{$data->quantity}}" hidden="">
+
+                                            {{$data->quantity}}
+                                        
+                                        </td>                                    
                                                                           
                                     </tr>
                                 @endforeach
@@ -170,8 +190,10 @@ https://templatemo.com/tm-558-klassy-cafe
 
                             </table>
 
+                            {{-- jqery btn should have type="button" attribute so, form will not consider it as form button --}}
+
                                     <div align="center" style="padding: 10px;">
-                                            <button class="btn btn-primary" id="order">Order Now</button>
+                                        <button class="btn btn-primary" type="button" id="order">Order Now</button>
                                     </div>
 
 
@@ -197,9 +219,12 @@ https://templatemo.com/tm-558-klassy-cafe
                                         <div style="padding: 10px;">
                                             <input class="btn btn-success " type="submit" value="Order Confirm">
                                         
-                                            <button class="btn btn-danger" id="close">Close</button>
+                                            <button class="btn btn-danger" type="button" id="close">Close</button>
                                         </div>
                                     </div>
+
+                                </form>
+
 
                         </div>
  
