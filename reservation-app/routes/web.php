@@ -51,6 +51,20 @@ Route::post('/orderconfirm ', [HomeController::class, 'orderconfirm']);
 
 
 
+/* Table Booking */
+
+Route::get('/book', [AdminController::class, 'book']);
+Route::get('/book/{id}', [AdminController::class, 'singleBook']);
+
+
+
+
+
+
+
+
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

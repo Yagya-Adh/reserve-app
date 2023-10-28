@@ -199,4 +199,15 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'Chef is deleted');
     }
+
+
+
+
+
+
+
+    public function book()
+    {
+        return view('admin.tablebook');
+    }
 }
