@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Floor;
 use App\Models\Food;
 use App\Models\Foodchef;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class AdminController extends Controller
 {
@@ -198,16 +200,5 @@ class AdminController extends Controller
         $data->delete();
 
         return redirect()->back()->with('message', 'Chef is deleted');
-    }
-
-
-
-
-
-
-
-    public function book()
-    {
-        return view('admin.tablebook');
     }
 }

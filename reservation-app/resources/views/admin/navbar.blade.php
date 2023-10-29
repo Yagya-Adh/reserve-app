@@ -99,14 +99,15 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Tabel Book</span>
+              <span class="menu-title">Floor</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url('/book')}}">Booking</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">CheckOut</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">History</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/floor')}}">CreateFloor</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/floor-check')}}">CheckOut</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/history')}}">History</a></li>
               </ul>
             </div>
           </li>

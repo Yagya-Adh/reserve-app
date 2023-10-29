@@ -68,7 +68,7 @@
   margin: 20px;
   padding: 30px;
   display: flex;
-  border: 2px solid greenyellow;
+  border: 2px solid #ccc;
 
   background-image: url("admin/assets/images/table_book.png");
   background-repeat: no-repeat;
@@ -119,17 +119,17 @@
                                     
                                      <div class="col">
                                        <h1>Select Blook</h1>
-                                      <div class="btnDiv">
-                                          <span>1</span>
-                                          <span>2</span>
-                                          <span>3</span>
-                                          <span>4</span>
-                                          <span>5</span>
-                                          <span>6</span>
-                                          <span>7</span>
-                                          <span>8</span>
-                                          <span>9</span>
-                                      </div>
+                                     
+                                     @foreach ($data as $data)
+                                         <form action="{{url('book',$data->spot)}}" method="post">
+
+                                           <div class="btnDiv">
+                                             <span>{{$data->spot}}</span>                                        
+                                            </div>
+                                            
+                                          </form>
+                                     @endforeach
+
                                      </div>
                                   
  
@@ -149,6 +149,8 @@
                                     <span></span>
                                     <span></span>
                                     <span></span>
+                                    <span></span>
+                                   
                                   </div>
                                 </div>
                               </div>

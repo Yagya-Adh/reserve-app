@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FloorController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,13 +52,22 @@ Route::post('/orderconfirm ', [HomeController::class, 'orderconfirm']);
 
 
 
-/* Table Booking */
+/* Table Booking OR Floor */
 
-Route::get('/book', [AdminController::class, 'book']);
-Route::get('/book/{id}', [AdminController::class, 'singleBook']);
+Route::get('/book', [FloorController::class, 'book']);
+Route::get('/book/{id}', [FloorController::class, 'book_show']);
+
+
+Route::get('/floor', [FloorController::class, 'viewFloor']);
+Route::post('/floor', [FloorController::class, 'createFloor']);
 
 
 
+Route::get('/floor-check', [FloorController::class, 'floorcheckout']);
+Route::get('/history', [FloorController::class, 'history']);
+
+
+/*  */
 
 
 
