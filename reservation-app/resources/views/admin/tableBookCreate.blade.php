@@ -28,8 +28,10 @@
                             
                           <h1>Floor Create</h1>
 
-                                  <form action="{{url('floor')}}" method="POST" enctype="multipart/form-data">
-
+                                  <form action="{{url('/floor')}}" method="POST" enctype="multipart/form-data">
+                                    
+                                    @csrf
+                                    
                                     <div class="mt-3 p-2">
                                       <label> Spot number</label>
                                       <input type="number" name="spot">
@@ -52,7 +54,7 @@
                                     </div>
                                     
                                     <div class="mt-3 p-2">
-                                       <input class="btn btn-primary"  type="submit"  value="Save">
+                                       <button type="submit" class="btn btn-danger">Save</button>
                                     </div>
                                   </form>
 

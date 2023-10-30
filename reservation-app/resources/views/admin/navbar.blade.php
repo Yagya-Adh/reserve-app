@@ -105,8 +105,8 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url('/book')}}">Booking</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url('/floor')}}">CreateFloor</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url('/floor-check')}}">CheckOut</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/floor')}}">Create Floor</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/floor-check')}}">Check Out</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url('/history')}}">History</a></li>
               </ul>
             </div>

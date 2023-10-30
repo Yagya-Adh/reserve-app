@@ -20,8 +20,11 @@ class HomeController extends Controller
 
         $data2 = Foodchef::all();
 
+        $user_id = Auth::id(); //loggin user id 
 
-        return view('home', compact('data', 'data2'));
+        $count = Cart::where('user_id', $user_id)->count();
+
+        return view('home', compact('data', 'data2', 'count'));
     }
 
 

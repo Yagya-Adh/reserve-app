@@ -121,13 +121,15 @@
                                        <h1>Select Blook</h1>
                                      
                                      @foreach ($data as $data)
-                                         <form action="{{url('book',$data->spot)}}" method="post">
+
+                                         <form action="{{url('/book',$data->id)}}" method="post">
 
                                            <div class="btnDiv">
-                                             <span>{{$data->spot}}</span>                                        
+                                             <span>{{$data->id}}</span>                                        
                                             </div>
-                                            
+                                                                                    
                                           </form>
+
                                      @endforeach
 
                                      </div>

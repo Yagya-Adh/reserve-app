@@ -35,7 +35,7 @@
                                 
                                 <div class="p-3">                                   
                                     <label>Speciality</label>
-                                    <input style="color: blue;" type="text" name="speciality" value="{{$data->name}}" required >
+                                    <input style="color: blue;" type="text" name="speciality" value="{{$data->speciality}}" required >
                                 </div>
 
 

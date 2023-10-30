@@ -51,17 +51,31 @@ class FloorController extends Controller
         $image = $request->spotImg;
         if ($image) {
             $imagename = time() . '.' . $image->getClientOriginalExtension();
-            $request->image->move('floorImg', $imagename);
+            $request->spotImg->move('floorImg', $imagename);
             $data->spotImg = $imagename;
         }
 
         $data->save();
 
-        return redirect()->back()->with('message', 'Successfully created Spot');
+        return redirect()->back();
+        // return redirect()->back()->with('message', 'Successfully created Spot');
     }
 
     public function floorcheckout()
     {
+
         return view('admin.adminfloorcheckout');
+    }
+
+
+    public function floorcheckoutView($id)
+    {
+
+        $data = Floor::find($id);
+        // $data2 = Bill::find();
+
+        $data2 = 220;
+
+        return view('admin.adminfloorcheckout', compact('data', 'data2'));
     }
 }
