@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
 
             $table->integer('spot');
+            /* 
             $table->enum('isBooked', ['yes', 'no'])->default('no');
-            $table->string('spotImg');
             $table->string('capacity');
+            $table->string('spotImg'); 
+            */
 
 
             $table->timestamps();

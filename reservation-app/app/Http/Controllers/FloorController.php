@@ -28,9 +28,14 @@ class FloorController extends Controller
 
     public function book_show($id)
     {
+        // dd($id->toArray());
+
         $data = Floor::find($id);
 
-        return view('admin.tablebook', compact('data'));
+        dump($data);
+
+
+        return view('admin.tablebookSingle', compact('data'));
     }
 
     /* create floor     and    view floor */
@@ -44,7 +49,7 @@ class FloorController extends Controller
         $data = new Floor();
 
         $data->spot = $request->spot;
-        $data->isBooked = $request->isBooked;
+        /*  $data->isBooked = $request->isBooked;
         $data->capacity = $request->capacity;
 
         // image
@@ -53,7 +58,7 @@ class FloorController extends Controller
             $imagename = time() . '.' . $image->getClientOriginalExtension();
             $request->spotImg->move('floorImg', $imagename);
             $data->spotImg = $imagename;
-        }
+        } */
 
         $data->save();
 

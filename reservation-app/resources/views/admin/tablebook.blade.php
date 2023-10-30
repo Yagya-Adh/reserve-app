@@ -92,6 +92,13 @@
 
  }
 
+
+.defaultClass{
+
+  background-color: rgb(248, 4, 4);
+
+}
+ 
   </style>
 
   
@@ -122,12 +129,12 @@
                                      
                                      @foreach ($data as $data)
 
-                                         <form action="{{url('/book',$data->id)}}" method="post">
-
+                                         <form action="{{url('/booki',$data->id)}}" method="get">
+                                          @csrf
                                            <div class="btnDiv">
-                                             <span>{{$data->id}}</span>                                        
+                                             <span id="btn_{{$data->id}}" type="button" >{{$data->id}}</span>                                        
                                             </div>
-                                                                                    
+                                                     <button type="submit">Ok</button>                               
                                           </form>
 
                                      @endforeach
@@ -142,16 +149,21 @@
                               
                                 <div class="col block_b">                                 
                                   <div class="row">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                                    <span class="btn_span1"></span>
+                                    <span class="btn_span2"></span>
+                                    <span class="btn_span3"></span>
+                                    <span class="btn_span4"></span>
+                                    <span class="btn_span5"></span>
+                                    <span class="btn_span6"></span>
+                                    <span class="btn_span7"></span>
+                                    <span class="btn_span8"></span>
+                                    <span class="btn_span9"></span>
+                                    <span class="btn_span10"></span>
+                                    <span class="btn_span11"></span>
+                                    <span class="btn_span12"></span>
+                                    <span class="btn_span13"></span>
+                                    <span class="btn_span14"></span>
+                                    <span class="btn_span15"></span>
                                    
                                   </div>
                                 </div>
@@ -188,24 +200,72 @@
         $(document).ready(function () {
 
 
-            $("#boxs_1").click(function () {
-                $(".table_a").addClass("defaultClass");
+            $("#btn_1").click(function () {
+                $(".btn_span1").addClass("defaultClass");
             });
 
-            $("#paybtn").click(function () {
-                confirm('payyour bill');
-                $(".table_a").removeClass("defaultClass");
-                $(".table_a").css('background-color', 'green');
-            })
+           $('.btn_span1').click(function(){
+             $(this).removeClass("defaultClass");
+           })
+
+
+
+        
+           $("#btn_2").click(function () {
+                $(".btn_span2").addClass("defaultClass");
+            });
+
+           $('.btn_span2').click(function(){
+             $(this).removeClass("defaultClass");
+           })
+
+       
+           $("#btn_3").click(function () {
+                $(".btn_span3").addClass("defaultClass");
+            });
+
+           $('.btn_span3').click(function(){
+             $(this).removeClass("defaultClass");
+           })
+
+           $("#btn_4").click(function () {
+                $(".btn_span4").addClass("defaultClass");
+            });
+
+           $('.btn_span4').click(function(){
+             $(this).removeClass("defaultClass");
+           })
+
+           $("#btn_5").click(function () {
+                $(".btn_span5").addClass("defaultClass");
+            });
+
+           $('.btn_span5').click(function(){
+             $(this).removeClass("defaultClass");
+           })
+
+           $("#btn_6").click(function () {
+                $(".btn_span6").addClass("defaultClass");
+            });
+
+           $('.btn_span6').click(function(){
+             $(this).removeClass("defaultClass");
+           })
+
+
 
 
           });
 
+
+ 
+
     </script>
 
   
+<span id="btn_{{$data->id}}"></span>
 
-
+<
 
   </body>
 </html>

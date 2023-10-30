@@ -55,7 +55,7 @@ Route::post('/orderconfirm ', [HomeController::class, 'orderconfirm']);
 /* Table Booking OR Floor */
 
 Route::get('/book', [FloorController::class, 'book']);
-Route::get('/book/{id}', [FloorController::class, 'book_show']);
+Route::get('/booki/{id}', [FloorController::class, 'book_show']);
 
 
 Route::get('/floor', [FloorController::class, 'viewFloor']);

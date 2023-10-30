@@ -37,7 +37,7 @@
                                       <input type="number" name="spot">
                                     </div>
 
-                                    <div class="mt-3 p-2">
+                                    {{-- <div class="mt-3 p-2">
                                       <label> Book Place</label>                                     
                                       <select name="isBooked">
                                         <option value="no">No</option>
@@ -51,7 +51,7 @@
                                     <div class="mt-3 p-2">
                                       <label> Image</label>
                                       <input type="file" name="spotImg">
-                                    </div>
+                                    </div> --}}
                                     
                                     <div class="mt-3 p-2">
                                        <button type="submit" class="btn btn-danger">Save</button>
