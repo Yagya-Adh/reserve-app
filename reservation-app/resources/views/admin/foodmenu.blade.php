@@ -29,32 +29,32 @@
                             <form action="{{url('/uploadfood')}}" method="post" enctype="multipart/form-data">
                                 @csrf
 
-                            <div class="p-3">
-                                <label>Title</label>
-                                <input type="text" name="title" placeholder="Write a title" required>
-                            </div>
-                            
+                                    <div class="p-3">
+                                        <label>Title</label>
+                                        <input type="text" name="title" placeholder="Write a title" required>
+                                    </div>
+                                    
 
-                             <div class="p-3">
-                                <label>Price</label>
-                                <input type="text" name="price" placeholder="price" required>
-                            </div>
+                                    <div class="p-3">
+                                        <label>Price</label>
+                                        <input type="text" name="price" placeholder="price" required>
+                                    </div>
 
-                             <div class="p-3">
-                                <label>Image</label>
-                                <input type="file" name="image" required>
-                            </div>
-
-
-                             <div class="p-3">
-                                <label>Description</label>
-                                <textarea type="text" name="description" placeholder="write a description " required></textarea>
-                            </div>
+                                    <div class="p-3">
+                                        <label>Image</label>
+                                        <input type="file" name="image" required>
+                                    </div>
 
 
-                             <div class="p-3">
-                                <input class=" btn btn-primary p-2 text-white" type="submit" value="Save"  >
-                            </div>
+                                    <div class="p-3">
+                                        <label>Description</label>
+                                        <textarea type="text" name="description" placeholder="write a description " required></textarea>
+                                    </div>
+
+
+                                    <div class="p-3">
+                                        <input class=" btn btn-primary p-2 text-white" type="submit" value="Save"  >
+                                    </div>
                             </form>
 
 
@@ -64,7 +64,8 @@
 
                                 <table class="table">
 
-                                    <tr align="center">
+                                    <thead>
+                                        <tr align="center">
                                         <th style="padding: 30px">Food Name</th>
                                         <th style="padding: 30px">Price</th>
                                         <th style="padding: 30px">Description</th>
@@ -72,18 +73,23 @@
                                         <th style="padding: 30px">Action</th>
                                         <th style="padding: 30px">Action 2</th>
                                     </tr>
+                                    </thead>
                                     
                                     @foreach ($data as $data)    
-                                    <tr align="center">
+                                    <tbody>
+
+                                        <tr align="center">
                                         <td>{{$data->title}}</td>
                                         <td>{{$data->price}}</td>
                                         <td>{{$data->description}}</td>
                                         <td>
-                                            <img height="200" width="300" src="public/foodimage/{{$data->image}}" alt="">
+                                            <img height="200" width="300" src="foodimage/{{$data->image}}" alt="">
                                         </td>
                                         <td><a href="{{url('/deletemenu',$data->id)}}" class="btn btn-danger">Delete</a></td>
                                         <td><a href="{{url('/updateview',$data->id)}}" class="btn btn-info">Update</a></td>
                                     </tr>
+
+                                    </tbody>
                                     @endforeach
 
 

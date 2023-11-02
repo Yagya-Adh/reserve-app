@@ -16,16 +16,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* user */
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/redirects', [HomeController::class, 'redirects']);
 Route::get('/users', [AdminController::class, 'user']);
+Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
+
+/* food */
 Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
 Route::post('/uploadfood', [AdminController::class, 'upload']);
-Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
-Route::get('/deletemenu/{id}', [AdminController::class, 'deletemenu']);
 Route::get('/updateview/{id}', [AdminController::class, 'updateview']);
-Route::post('/uploadfood/{id}', [AdminController::class, 'update']);
+Route::post('/updatefood/{id}', [AdminController::class, 'update']);
+
+Route::get('/deletemenu/{id}', [AdminController::class, 'deletemenu']);
+
 
 
 // resevation

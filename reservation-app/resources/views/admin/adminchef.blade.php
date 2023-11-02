@@ -52,18 +52,24 @@
                           
                           
                             <table class="table">
+                                        <thead>
 
-                              <tr align="center">
-                                <th class="p-3">Chef Name</th>
-                                <th class="p-3">Speciality</th>
-                                <th class="p-3">Image</th>
-                                <th class="p-3">Action</th>
-                                <th class="p-3">Action 2</th>
-                              </tr>
+                                          <tr align="center">
+                                            <th class="p-3">Chef Name</th>
+                                            <th class="p-3">Speciality</th>
+                                            <th class="p-3">Image</th>
+                                            <th class="p-3">Action</th>
+                                            <th class="p-3">Action 2</th>
+                                          </tr>
+
+                                        </thead>
                               
                               @foreach ($data as $data)
                           
+                             <tbody>
+                              
                               <tr align="center">
+                              
                                 <td>{{$data->name}}</td>
                                 <td>{{$data->speciality}}</td>
                                 <td>                                  
@@ -78,6 +84,8 @@
                                 </td>
 
                               </tr>
+
+                             </tbody>
                                 
                               @endforeach
                             </table>

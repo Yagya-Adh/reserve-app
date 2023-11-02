@@ -24,40 +24,40 @@
                         <div class="row ">
                         
 
-                        <form action="{{url('/update')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{url('/updatefood',$data->id)}}" method="post" enctype="multipart/form-data">
                                 @csrf
 
-                            <div class="p-3">
-                                <label>Title</label>
-                                <input type="text" name="title" value="{{$data->title}}" required>
-                            </div>
-                            
+                                    <div class="p-3">
+                                        <label>Title</label>
+                                        <input type="text" name="title" value="{{$data->title}}" required>
+                                    </div>
+                                    
 
-                             <div class="p-3">
-                                <label>Price</label>
-                                <input type="text" name="price" value="{{$data->price}}" required>
-                            </div>
+                                    <div class="p-3">
+                                        <label>Price</label>
+                                        <input type="text" name="price" value="{{$data->price}}" required>
+                                    </div>
 
-                             <div class="p-3">
-                                <label>Old Image</label>
-                                <img height="200" width="300" src="foodimage/{{$data->image}}" alt="">
-                            </div>
+                                    <div class="p-3">
+                                        <label>Old Image</label>
+                                        <img height="200" width="300" src="foodimage/{{$data->image}}" alt="">
+                                    </div>
 
-                            <div class="p-3">
-                                <label>Change Image</label>
-                                <input type="file" name="image" required>
-                            </div>
-
-
-                             <div class="p-3">
-                                <label>Description</label>
-                                <textarea type="text" name="description" required>{{$data->description}}</textarea>
-                            </div>
+                                    <div class="p-3">
+                                        <label>Change Image</label>
+                                        <input type="file" name="image" required>
+                                    </div>
 
 
-                             <div class="p-3">
-                                <input class=" btn btn-primary p-2 text-white" type="submit" value="Update"  >
-                            </div>
+                                    <div class="p-3">
+                                        <label>Description</label>
+                                        <textarea type="text" name="description" required>{{$data->description}}</textarea>
+                                    </div>
+
+
+                                    <div class="p-3">
+                                        <input class=" btn btn-primary p-2 text-white" type="submit" value="Update"  >
+                                    </div>
                             </form>
 
 

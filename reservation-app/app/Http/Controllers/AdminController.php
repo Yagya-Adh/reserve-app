@@ -31,6 +31,7 @@ class AdminController extends Controller
         return redirect()->back()->with('message', 'User is successfully deleted.');
     }
 
+    /* Food */
 
     public function foodmenu()
     {
